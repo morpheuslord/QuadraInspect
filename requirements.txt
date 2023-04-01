@@ -1,0 +1,16 @@
+apkleaks==2.6.1
+apkutil==0.1.7
+autopep8==2.0.2
+colorama==0.4.6
+defusedxml==0.7.1
+gitdb==4.0.10
+GitPython==3.1.31
+markdown-it-py==2.2.0
+mdurl==0.1.2
+pyaxmlparser==0.3.28
+pycodestyle==2.10.0
+pyfiglet==0.7
+Pygments==2.14.0
+rich==13.3.3
+smmap==5.0.0
+tomli==2.0.1
