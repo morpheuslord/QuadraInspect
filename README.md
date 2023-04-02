@@ -16,7 +16,7 @@ First :
 git clone https://github.com/morpheuslord/AFrame
 `
 
-Second Open a Administrative cmd or powershell (for Mobfs setup) and run : 
+Second Open a **Administrative** cmd or powershell (for Mobfs setup) and run : 
 `
 pip install -r requirements.txt && pytbon3 main.py
 `
