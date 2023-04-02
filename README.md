@@ -39,6 +39,9 @@ These are the key points that must be addressed for smooth working:
 - The APK file can be ether declared ether using `args` or using `SET target` withing the tool.
 - The target APK file must be placed in the `target` folder as all the tool searches for the target file with that folder.
 
+![usage](https://user-images.githubusercontent.com/70637311/229340837-aae597f1-e33d-4293-af0a-c8e9914e73e2.png)
+
+
 ### Main Module
 the main menu of the entire tool has these options and commands:
 
