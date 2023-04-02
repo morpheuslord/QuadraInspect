@@ -20,10 +20,12 @@ Second : Open a Administrative cmd or powershell (for Mobfs setup)
 `
 pip install -r requirements.txt && pytbon3 main.py
 `
+
 Third : Once AFrame loads run this command
 `
 AFrame Main>> : START install_tools
 `
+
 The tools will be downloaded to the `tools` directory and also the setup.py and setup.bat commands will run automatically for the complete installation.
 
 ## Architecture:
