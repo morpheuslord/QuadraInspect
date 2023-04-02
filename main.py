@@ -186,6 +186,8 @@ def apkleaks(fn):
                     opt.add_row("SET json-out", "For JSON output")
                     opt.add_row("SET pattern", "custom patterns JSON Rules")
                     opt.add_row("help", "Displays help menu")
+                    opt.add_row("return", "return to main menu")
+                    opt.add_row("quit", "quit the program")
                     console.print(opt)
                 case 'return':
                     main()
