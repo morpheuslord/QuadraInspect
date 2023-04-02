@@ -79,6 +79,8 @@ The APKLeaks menu is also really straight forward and only a few things to consi
 |`SET json-out` | JSON output file name|
 |`SET pattern `    | The pre-searching pattern for secrets|
 |`help`|Displays help menu|
+|`return` |Return to main menu|
+|`quit`|Quit the tool|
 
 ### Mobfs
 Mobfs is pritty straight forward only the port number must be taken care of which is by default on port 5000 you just need to start the program and connect to it on `127.0.0.1:5000` over your browser.
