@@ -107,12 +107,14 @@ Currentluy there only 3 but if wanted people can add more tools to this these ar
 
 #### Installer Function
 
+- Must edit in the `config/installer.py`
 - The things to consider in the installer is the link for the repository.
 - keep the cloner and the directory in a try-except condition to avoide errors.
 - choose an appropriate command for further installation
 
 #### Seperate tool function
 
+- Must edit in the `config/mobfs.py , config/androp.py, config/apkleaks.py`
 - Write a new function for the specific tool
 - File handeling is up to you I recommend passing the file name as an argument and then using the name to locate the file using the subprocess function
 - the tools must also recommended to be in a try-except condition to avoide unwanted errors.
