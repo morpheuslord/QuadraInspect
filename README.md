@@ -28,6 +28,10 @@ AFrame Main>> : START install_tools
 
 The tools will be downloaded to the `tools` directory and also the setup.py and setup.bat commands will run automatically for the complete installation.
 
+## Usage
+
+### Main Module
+
 ## Architecture:
 
 The APK analysis framework will follow a modular architecture, similar to Metasploit. It will consist of the following modules:
