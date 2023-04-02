@@ -50,6 +50,14 @@ the main menu of the entire tool has these options and commands:
 |`SHOW banner`| Display banner|
 |`quit`|Quit the program|
 
+As mentioned above the target must be set before any tool is used.
+
+### Apkleaks menu
+
+### mobfs
+
+### AndroPass
+
 ## Architecture:
 
 The APK analysis framework will follow a modular architecture, similar to Metasploit. It will consist of the following modules:
