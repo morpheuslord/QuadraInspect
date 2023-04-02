@@ -29,6 +29,12 @@ AFrame Main>> : START install_tools
 The tools will be downloaded to the `tools` directory and also the setup.py and setup.bat commands will run automatically for the complete installation.
 
 ## Usage
+Each module has a help function so that the commands and the discriptions are detailed and can be altered for operation.
+
+These are the key points that must be addressed for smooth working:
+- The APK file or target must be declared before starting any attack 
+- The Attacks are seperate entities combined via this framework doing research on how to use them is recommended.
+- The APK file can be ether declared ether using `args` or using `SET target` withing the tool.
 
 ### Main Module
 
