@@ -1,5 +1,6 @@
 import os
 import platform
+import argparse
 from git import Repo
 from pyfiglet import Figlet
 from subprocess import run
@@ -12,6 +13,14 @@ console = Console()
 os.chdir(os.getcwd())
 path = str(os.getcwd())
 fn = ""
+
+parser = argparse.ArgumentParser(
+    description='Python-Nmap and chatGPT intigrated Vulnerability scanner')
+parser.add_argument('--target', metavar='target', type=str,
+                    help='APK FILE NAME', required=False)
+
+args = parser.parse_args()
+target = args.target
 
 
 def banner():
@@ -48,7 +57,7 @@ def installer():
     except FileExistsError:
         pass
     try:
-        os.makedirs('rule')
+        os.makedirs('pattern')
     except FileExistsError:
         pass
     try:
@@ -141,7 +150,7 @@ def apkleaks(fn):
             match command:
                 case 'SET pattern':
                     promptj = Prompt.ask("Enter Prompt file >>")
-                    rulesj = '{a}/rule/{b}'.format(a=rdir, b=promptj)
+                    rulesj = '{a}/pattern/{b}'.format(a=rdir, b=promptj)
                     final_cmd += str(" -p {}".format(rulesj))
                 case 'SET output':
                     outfn = Prompt.ask("Enter output file Name >>")
@@ -197,6 +206,7 @@ def mobfs(fn):
 
 def main():
     command = ""
+    fn = target
     banner()
     try:
         while True:
