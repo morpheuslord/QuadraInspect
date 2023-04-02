@@ -180,11 +180,12 @@ def apkleaks(fn):
                     opt = Table(title="APKLeaks Help Menu")
                     opt.add_column("OPTION")
                     opt.add_column("Discription")
-                    opt.add_row("OUTPUT FILE",
+                    opt.add_row("SET output",
                                 "Write to file results")
-                    opt.add_row("ARGUMENTS", "Disassembler arguments")
-                    opt.add_row("JSON OUTPUT", "For JSON output")
-                    opt.add_row("PATTERN", "custom patterns JSON Rules")
+                    opt.add_row("SET arguments", "Disassembler arguments")
+                    opt.add_row("SET json-out", "For JSON output")
+                    opt.add_row("SET pattern", "custom patterns JSON Rules")
+                    opt.add_row("help", "Displays help menu")
                     console.print(opt)
                 case 'return':
                     main()
@@ -242,6 +243,7 @@ def main():
                     hm.add_row("LIST tools_name",
                                "List out the Tools Intigrated")
                     hm.add_row("START apkleaks", "Use APKLeaks tool")
+                    hm.add_row("START andropass", "Use AndroPass APK analizer")
                     hm.add_row("START mobfs",
                                "Use MOBfs for dynamic and static analysis")
                     hm.add_row("help", "View this current Help menu")
