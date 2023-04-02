@@ -25,16 +25,20 @@ def installer():
     osp = platform.system()
     pprint("OS FOUND: {}".format(osp))
     command = ""
+    cmd_mob = ""
     match osp:
         case 'Darwin':
             command = "python3 setup.py build && python3 setup.py install"
+            cmd_mob = "sudo bash setup.sh"
         case 'Linux':
             command = "python3 setup.py build && python3 setup.py install"
+            cmd_mob = "sudo bash setup.sh"
         case 'Windows':
             command = "python setup.py build && python setup.py install"
+            cmd_mob = ".\setup.bat"
     andropass = 'https://github.com/koengu/AndRoPass'
     apkleaks = 'https://github.com/dwisiswant0/apkleaks'
-    apkutil = 'https://github.com/aktsk/apkutil'
+    mobfs = 'https://github.com/MobSF/Mobile-Security-Framework-MobSF.git'
     try:
         os.makedirs('tools')
     except FileExistsError:
@@ -63,15 +67,15 @@ def installer():
         Repo.clone_from(apkleaks, '{}/apkleaks'.format(twd))
     except:
         pass
-    pprint("Cloning APKUtil")
+    pprint("Cloning MOBfs")
     try:
-        Repo.clone_from(apkutil, '{}/apkutil'.format(twd))
+        Repo.clone_from(mobfs, '{}/mobfs'.format(twd))
     except:
         pass
     os.chdir('{}/apkleaks'.format(twd))
     run(command, shell=True)
-    os.chdir('{}/apkutil'.format(twd))
-    run(command, shell=True)
+    os.chdir('{}/mobfs'.format(twd))
+    run(cmd_mob, shell=True)
     pprint('Install Complete')
 
 
@@ -130,27 +134,27 @@ def apkleaks(fn):
                 p = "python"
         rdir = os.getcwd()
         tdir = '{}/tools/apkleaks/'.format(rdir)
-        final_cmd = ""
         tfile = '{x}/target/{y}'.format(x=rdir, y=fn)
+        final_cmd = str("")
         while True:
             command = Prompt.ask("APKLEAKS>> ")
             match command:
                 case 'SET pattern':
                     promptj = Prompt.ask("Enter Prompt file >>")
                     rulesj = '{a}/rule/{b}'.format(a=rdir, b=promptj)
-                    final_cmd += " -p {}".format(rulesj)
+                    final_cmd += str(" -p {}".format(rulesj))
                 case 'SET output':
                     outfn = Prompt.ask("Enter output file Name >>")
                     ofile = '{a}/results/{b}'.format(a=rdir, b=outfn)
-                    final_cmd += " -o {}".format(ofile)
+                    final_cmd += str(" -o {}".format(ofile))
                 case 'SET json-out':
                     jsono = Prompt.ask("Enter output file Name >>")
                     ojfile = '{a}/results/{b}'.format(a=rdir, b=jsono)
-                    final_cmd += " --json {}".format(ojfile)
+                    final_cmd += str(" --json {}".format(ojfile))
                 case 'SET arguments':
                     cargs = Prompt.ask("Enter arguments >>")
                     argn = '{b}'.format(b=cargs)
-                    final_cmd += " -a {}".format(argn)
+                    final_cmd += str(" -a {}".format(argn))
                 case 'attack':
                     run("{a} {b}apkleaks.py {c} -f {d}".format(a=p,
                         b=tdir, c=final_cmd, d=tfile))
@@ -181,109 +185,12 @@ def apkleaks(fn):
         pprint("Ending process ...")
 
 
-def apkutil(fn):
-    all = False
-    debuggable = False
-    network = False
-    info = False
-    screenshot = False
-    decode = False
-    build = False
-    sign = False
-    align = False
+def mobfs(fn):
     try:
-        osp = platform.system()
-        p = ""
-        match osp:
-            case 'Darwin':
-                p = "python3"
-            case 'Linux':
-                p = "python3"
-            case 'Windows':
-                p = "python"
         rdir = os.getcwd()
-        acmd = ""
-        tdir = '{}/.venv/Scripts/'.format(rdir)
-        tfile = '{x}/target/{y}'.format(x=rdir, y=fn)
-        while True:
-            command = Prompt.ask("APKUTIL>> ")
-            match command:
-                case 'SET-ALL':
-                    all = True
-                    acmd += " all "
-                case 'SET-debug':
-                    all = False
-                    debuggable = True
-                    acmd += " d "
-                case 'SET-network':
-                    all = False
-                    network = True
-                    acmd += " n "
-                case 'SET-info':
-                    all = False
-                    info = True
-                    acmd += " i "
-                case 'SET-screenshot':
-                    all = False
-                    screenshot = True
-                    acmd += " ss "
-                case 'SET-decode':
-                    all = False
-                    decode = True
-                    acmd += " d "
-                case 'SET-build':
-                    all = False
-                    build = True
-                    acmd += " b "
-                case 'SET-sign':
-                    all = False
-                    sign = True
-                    acmd += " s "
-                case 'SET-align':
-                    all = False
-                    align = True
-                    acmd += " a "
-                case 'attack':
-                    try:
-                        run("apkutil{c} {d}".format(c=acmd, d=tfile))
-                    except:
-                        print("Installation Error")
-                case 'SHOW OPTIONS':
-                    opt = Table(title="Options SET")
-                    opt.add_column("OPTION")
-                    opt.add_column("SET Value")
-                    opt.add_row("ALL", str(all))
-                    opt.add_row("DEBUGABLE", str(debuggable))
-                    opt.add_row("NETWORK", str(network))
-                    opt.add_row("INFO", str(info))
-                    opt.add_row("SCREENSHOT", str(screenshot))
-                    opt.add_row("DECODE", str(decode))
-                    opt.add_row("BUILD", str(build))
-                    opt.add_row("SIGN", str(sign))
-                    opt.add_row("ALIGN", str(align))
-                    console.print(opt)
-                case 'help':
-                    opt = Table(title="APKUtil Help menu")
-                    opt.add_column("OPTION")
-                    opt.add_column("Discription")
-                    opt.add_row(
-                        "ALL", "set debuggable & networkSecurityConfig, build & sign APK ")
-                    opt.add_row(
-                        "DEBUGABLE", "set debuggable, build & sign APK")
-                    opt.add_row(
-                        "NETWORK", "set networkSecurityConfig, build & sign APK")
-                    opt.add_row("INFO", "identify the package name")
-                    opt.add_row(
-                        "SCREENSHOT", "get screenshot from connected device")
-                    opt.add_row("DECODE", "decode APK")
-                    opt.add_row("BUILD", "build APK")
-                    opt.add_row("SIGN", "sign APK")
-                    opt.add_row("ALIGN", "align")
-                    console.print(opt)
-                case 'return':
-                    main()
-                case 'quit':
-                    quit()
+        tdir = '{}/tools/mobfs/'.format(rdir)
+        run('{}/setup.bat'.format(tdir))
+        pass
     except KeyboardInterrupt:
         pprint("Ending process ...")
 
@@ -309,8 +216,8 @@ def main():
                     installer()
                 case 'START apkleaks':
                     apkleaks(fn)
-                case 'START apkutil':
-                    apkutil(fn)
+                case 'START mobfs':
+                    mobfs(fn)
                 case 'START andropass':
                     andropass(fn)
                 case 'SHOW banner':
@@ -325,7 +232,8 @@ def main():
                     hm.add_row("LIST tools_name",
                                "List out the Tools Intigrated")
                     hm.add_row("START apkleaks", "Use APKLeaks tool")
-                    hm.add_row("START apkutil", "Use APKUtil tool")
+                    hm.add_row("START mobfs",
+                               "Use MOBfs for dynamic and static analysis")
                     hm.add_row("help", "View this current Help menu")
                     hm.add_row("SHOW banner", "Render Banner")
                     hm.add_row("quit", "Quit the Program")
