@@ -16,7 +16,7 @@ git clone https://github.com/morpheuslord/AFrame
 
 Second Open a **Administrative** cmd or powershell (for Mobfs setup) and run : 
 `
-pip install -r requirements.txt && pytbon3 main.py
+pip install -r requirements.txt && python3 main.py
 `
 
 Third : Once AFrame loads run this command
@@ -36,6 +36,17 @@ These are the key points that must be addressed for smooth working:
 - The target APK file must be placed in the `target` folder as all the tool searches for the target file with that folder.
 
 ### Main Module
+the main menu of the entire tool has these options and commands:
+|----|----|
+|`SET target`| SET the name of the targetfile|
+|`START install_tools`|If not installed this will install the tools|
+|`LIST tools_name`| List out the Tools Intigrated |
+|`START apkleaks`|  Use APKLeaks tool |
+|`START mobfs`| Use MOBfs for dynamic and static analysis |
+|`START andropass`| Use AndroPass APK analizer |
+|`help`| Display help menu|
+|`SHOW banner`| Display banner|
+|`quit`|Quit the program|
 
 ## Architecture:
 
