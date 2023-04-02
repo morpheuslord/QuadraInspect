@@ -6,6 +6,9 @@ AFrame is an Android framework that integrates AndroPass, APKUtil, and MobFS, pr
 
 By combining these three tools, AFrame provides a comprehensive approach to vulnerability analysis of Android applications. This framework can be used by developers, security researchers, and penetration testers to assess the security of their own or third-party applications. AFrame provides a unified interface for all three tools, making it easier to use and reducing the time required to conduct comprehensive vulnerability analysis. Ultimately, this framework aims to increase the security of Android applications and protect users' sensitive data from potential threats.
 
+## Requirements
+
+
 ## Installation
 
 To install the tools you need to:
@@ -80,3 +83,29 @@ The APK analysis framework will follow a modular architecture, similar to Metasp
 - Dynamic analysis module: The dynamic analysis module will be responsible for analyzing the behavior of APK files, such as network traffic, API calls, and file system interactions.
 - Reverse engineering module: The reverse engineering module will be responsible for decompiling and analyzing the source code of APK files.
 - Vulnerability testing module: The vulnerability testing module will be responsible for testing the security of APK files, such as identifying vulnerabilities and exploits.
+
+### Adding more
+
+Currentluy there only 3 but if wanted people can add more tools to this these are the things to be considered:
+- Installer function
+- Seperate tool function
+- Main function
+
+#### Installer Function
+
+- The things to consider in the installer is the link for the repository.
+- keep the cloner and the directory in a try-except condition to avoide errors.
+- choose an appropriate command for further installation
+
+#### Seperate tool function
+
+- Write a new function for the specific tool
+- File handeling is up to you I recommend passing the file name as an argument and then using the name to locate the file using the subprocess function
+- the tools must also recommended to be in a try-except condition to avoide unwanted errors.
+
+#### Main Function
+- A new case must be added to the switch function to act as a main function holder
+- the help menu listing and commands are up to your requirements and comfort
+
+If wanted you could do your upgrades and add it to this repository for more people to use kind of growing this tool.
+
