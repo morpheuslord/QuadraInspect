@@ -189,7 +189,7 @@ def mobfs(fn):
     try:
         rdir = os.getcwd()
         tdir = '{}/tools/mobfs/'.format(rdir)
-        run('{}/setup.bat'.format(tdir))
+        run('{}/run.bat 127.0.0.1:5000'.format(tdir))
         pass
     except KeyboardInterrupt:
         pprint("Ending process ...")
