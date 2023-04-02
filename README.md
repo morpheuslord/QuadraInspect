@@ -7,7 +7,8 @@ AFrame is an Android framework that integrates AndroPass, APKUtil, and MobFS, pr
 By combining these three tools, AFrame provides a comprehensive approach to vulnerability analysis of Android applications. This framework can be used by developers, security researchers, and penetration testers to assess the security of their own or third-party applications. AFrame provides a unified interface for all three tools, making it easier to use and reducing the time required to conduct comprehensive vulnerability analysis. Ultimately, this framework aims to increase the security of Android applications and protect users' sensitive data from potential threats.
 
 ## Requirements
-
+ - Windows, Linux or Mac
+ - Python 3 installed
 
 ## Installation
 
@@ -84,7 +85,7 @@ The APK analysis framework will follow a modular architecture, similar to Metasp
 - Reverse engineering module: The reverse engineering module will be responsible for decompiling and analyzing the source code of APK files.
 - Vulnerability testing module: The vulnerability testing module will be responsible for testing the security of APK files, such as identifying vulnerabilities and exploits.
 
-## Adding more
+### Adding more
 
 Currentluy there only 3 but if wanted people can add more tools to this these are the things to be considered:
 - Installer function
