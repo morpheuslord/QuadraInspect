@@ -58,10 +58,10 @@ The APKLeaks menu is also really straight forward and only a few things to consi
 
 | OPTION      | SET Value |
 |-------------|-----------|
- OUTPUT FILE │ Output for the scan data file name
- ARGUMENTS   │ Additional Disassembly arguments
- JSON OUTPUT │ JSON output file name
- PATTERN     │ The pre-searching pattern for secrets
+|`OUTPUT FILE` |Output for the scan data file name|
+|`ARGUMENTS`   | Additional Disassembly arguments|
+|`JSON OUTPUT` | JSON output file name|
+|`PATTERN `    | The pre-searching pattern for secrets|
 
 ### mobfs
 
