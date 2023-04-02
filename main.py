@@ -209,7 +209,7 @@ def main():
                     table.add_column("Number")
                     table.add_column("Name")
                     table.add_row("1", "apkleaks")
-                    table.add_row("2", "apkutil")
+                    table.add_row("2", "mobfs")
                     table.add_row("3", "andropass")
                     console.print(table)
                 case 'START install_tools':
