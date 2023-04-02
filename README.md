@@ -53,6 +53,15 @@ the main menu of the entire tool has these options and commands:
 As mentioned above the target must be set before any tool is used.
 
 ### Apkleaks menu
+The APKLeaks menu is also really straight forward and only a few things to consider:
+- The ALL option does
+
+| OPTION      | SET Value |
+|-------------|-----------|
+│ OUTPUT FILE │ Output for the scan data file name│
+│ ARGUMENTS   │ Additional Disassembly arguments│
+│ JSON OUTPUT │ JSON output file name│
+│ PATTERN     │ The pre-searching pattern for secrets│
 
 ### mobfs
 
