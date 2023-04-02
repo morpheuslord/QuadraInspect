@@ -54,7 +54,8 @@ As mentioned above the target must be set before any tool is used.
 
 ### Apkleaks menu
 The APKLeaks menu is also really straight forward and only a few things to consider:
-- The options `OUTPUT FILE` and 
+- The options `SET output` and `SET json-out` takes file names not the actual files it creates an output in the `result` directory.
+- The `SET pattern` option takes a name of a json pattern file. The JSON file must be located in the `pattern` directory
 
 | OPTION      | SET Value |
 |-------------|-----------|
