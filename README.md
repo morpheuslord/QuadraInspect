@@ -37,6 +37,8 @@ These are the key points that must be addressed for smooth working:
 
 ### Main Module
 the main menu of the entire tool has these options and commands:
+
+|Command|Discription|
 |----|----|
 |`SET target`| SET the name of the targetfile|
 |`START install_tools`|If not installed this will install the tools|
