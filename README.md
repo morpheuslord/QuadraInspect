@@ -8,6 +8,23 @@ Lastly, MobFS is a tool that facilitates the analysis of an application's filesy
 
 By combining these three tools, the Android framework provides a comprehensive approach to vulnerability analysis of Android applications. This framework can be used by developers, security researchers, and penetration testers to assess the security of their own or third-party applications. Ultimately, this framework aims to increase the security of Android applications and protect users' sensitive data from potential threats.
 
+## Installation
+
+To install the tools you need to:
+First : 
+`
+git clone https://github.com/morpheuslord/AFrame
+`
+
+Second : Open a Administrative cmd or powershell (for Mobfs setup)
+`
+pip install -r requirements.txt && pytbon3 main.py
+`
+Third : Once AFrame loads run this command
+`
+AFrame Main>> : START install_tools
+`
+The tools will be downloaded to the `tools` directory and also the setup.py and setup.bat commands will run automatically for the complete installation.
 
 ## Architecture:
 
