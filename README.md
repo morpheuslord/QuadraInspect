@@ -84,7 +84,7 @@ The APK analysis framework will follow a modular architecture, similar to Metasp
 - Reverse engineering module: The reverse engineering module will be responsible for decompiling and analyzing the source code of APK files.
 - Vulnerability testing module: The vulnerability testing module will be responsible for testing the security of APK files, such as identifying vulnerabilities and exploits.
 
-### Adding more
+## Adding more
 
 Currentluy there only 3 but if wanted people can add more tools to this these are the things to be considered:
 - Installer function
