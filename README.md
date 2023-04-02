@@ -1,5 +1,11 @@
 # AFrame
 
+    ___    ______
+   /   |  / ____/________ _____ ___  ___ 
+  / /| | / /_  / ___/ __ `/ __ `__ \/ _ \
+ / ___ |/ __/ / /  / /_/ / / / / / /  __/
+/_/  |_/_/   /_/   \__,_/_/ /_/ /_/\___/ 
+
 The security of mobile devices has become a critical concern due to the increasing amount of sensitive data being stored on them. With the rise of Android OS as the most popular mobile platform, the need for effective tools to assess its security has also increased. In response to this need, a new Android framework has emerged that combines three powerful tools - AndroPass, APKUtil, and MobFS - to conduct comprehensive vulnerability analysis of Android applications. This framework is known as AFrame.
 
 AFrame is an Android framework that integrates AndroPass, APKUtil, and MobFS, providing a powerful tool for analyzing the security of Android applications. AndroPass is a tool that focuses on analyzing the security of Android applications' authentication and authorization mechanisms, while APKUtil is a tool that extracts valuable information from an APK file. Lastly, MobFS facilitates the analysis of an application's filesystem by mounting its storage in a virtual environment.
