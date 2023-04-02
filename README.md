@@ -35,6 +35,7 @@ These are the key points that must be addressed for smooth working:
 - The APK file or target must be declared before starting any attack 
 - The Attacks are seperate entities combined via this framework doing research on how to use them is recommended.
 - The APK file can be ether declared ether using `args` or using `SET target` withing the tool.
+- The target APK file must be placed in the `target` folder as all the tool searches for the target file with that folder.
 
 ### Main Module
 
