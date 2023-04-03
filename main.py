@@ -51,7 +51,7 @@ def main():
                     table.add_row("3", "andropass")
                     console.print(table)
                 case 'START install_tools':
-                    installer()
+                    installer(rdir)
                 case 'START apkleaks':
                     apkleaks(fn, rdir)
                 case 'START mobfs':
