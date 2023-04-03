@@ -18,6 +18,7 @@ By combining these three tools, AFrame provides a comprehensive approach to vuln
  - Windows, Linux or Mac
  - Python 3 installed
  - OpenSSL-3 installed
+ - Wkhtmltopdf installed
 
 ## Installation
 
