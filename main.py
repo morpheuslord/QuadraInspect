@@ -10,6 +10,7 @@ from config.installer import installer
 from config.androp import androp
 from config.apkleaks import apkleaks
 from config.mobfs import mobfs
+from config.rms import rms
 
 console = Console()
 os.chdir(os.getcwd())
@@ -56,6 +57,8 @@ def main():
                     apkleaks(fn, rdir)
                 case 'START mobfs':
                     mobfs(rdir)
+                case 'START rms':
+                    rms(rdir)
                 case 'START andropass':
                     androp(fn, rdir)
                 case 'SHOW banner':
@@ -73,6 +76,8 @@ def main():
                     hm.add_row("START andropass", "Use AndroPass APK analizer")
                     hm.add_row("START mobfs",
                                "Use MOBfs for dynamic and static analysis")
+                    hm.add_row("START rms",
+                               "Use rms for static analysis")
                     hm.add_row("help", "View this current Help menu")
                     hm.add_row("SHOW banner", "Render Banner")
                     hm.add_row("quit", "Quit the Program")
