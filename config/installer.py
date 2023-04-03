@@ -15,7 +15,7 @@ fn = ""
 
 class Progress(RemoteProgress):
     def update(self, op_code, cur_count, max_count=None, message=''):
-        print('update(%s, %s, %s, %s)' %
+        pprint('update(%s, %s, %s, %s)' %
               (op_code, cur_count, max_count, message))
 
 
