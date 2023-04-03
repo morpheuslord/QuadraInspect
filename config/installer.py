@@ -46,6 +46,7 @@ def installer(rdir):
         os.makedirs('target')
     except FileExistsError:
         pass
+    pprint('This may take some time be patient...')
     os.chdir('{}/tools'.format(path))
     twd = os.getcwd()
     pprint("Cloning AndroPass")
