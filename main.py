@@ -55,7 +55,7 @@ def main():
                 case 'START apkleaks':
                     apkleaks(fn, rdir)
                 case 'START mobfs':
-                    mobfs()
+                    mobfs(rdir)
                 case 'START andropass':
                     androp(fn, rdir)
                 case 'SHOW banner':
