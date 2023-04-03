@@ -2,13 +2,21 @@ import os
 import platform
 from git import Repo
 from subprocess import run
+from git.remote import RemoteProgress
 from rich.console import Console
 from rich.pretty import pprint
+from rich.progress import track
 
 console = Console()
 os.chdir(os.getcwd())
 path = str(os.getcwd())
 fn = ""
+
+
+class Progress(RemoteProgress):
+    def update(self, op_code, cur_count, max_count=None, message=''):
+        print('update(%s, %s, %s, %s)' %
+              (op_code, cur_count, max_count, message))
 
 
 def installer(rdir):
@@ -56,22 +64,24 @@ def installer(rdir):
     twd = os.getcwd()
     pprint("Cloning AndroPass")
     try:
-        Repo.clone_from(andropass, '{}/andropass'.format(twd))
+        Repo.clone_from(andropass, '{}/andropass'.format(twd),
+                        progress=Progress())
     except:
         pass
     pprint("Cloning APKLeaks")
     try:
-        Repo.clone_from(apkleaks, '{}/apkleaks'.format(twd))
+        Repo.clone_from(apkleaks, '{}/apkleaks'.format(twd),
+                        progress=Progress())
     except:
         pass
     pprint("Cloning MOBfs")
     try:
-        Repo.clone_from(mobfs, '{}/mobfs'.format(twd))
+        Repo.clone_from(mobfs, '{}/mobfs'.format(twd), progress=Progress())
     except:
         pass
     pprint("Cloning RMS-Mobile-Security")
     try:
-        Repo.clone_from(rms, '{}/rms'.format(twd))
+        Repo.clone_from(rms, '{}/rms'.format(twd), progress=Progress())
     except:
         pass
     os.chdir('{}/apkleaks'.format(twd))
