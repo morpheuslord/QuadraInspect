@@ -41,7 +41,6 @@ def banner():
 
 
 def main():
-    command = ""
     fn = target
     banner()
     rdir = os.getcwd()
@@ -49,8 +48,8 @@ def main():
         case 'frame':
             try:
                 while True:
-                    command = Prompt.ask("AFrame Main>> ")
-                    match command:
+                    cmd = Prompt.ask("AFrame Main>> ")
+                    match cmd:
                         case 'SET target':
                             fn = Prompt.ask("Name >>")
                         case 'LIST tools_name':
