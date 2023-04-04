@@ -146,9 +146,6 @@ def main():
                                    "Use rms for static analysis")
                         hm.add_row("help", "View this current Help menu")
                         console.print(hm)
-                    case 'quit':
-                        pprint("Happy hacking..")
-                        quit()
             except KeyboardInterrupt:
                 pprint("I am Quiting!")
                 quit()
