@@ -70,6 +70,7 @@ A mode or argumentative mode takes the input via arguments and runs the commands
 ```bash
 python main.py --target <APK_file> --mode a --command install_tools/tools_name/apkleaks/mobfs/rms/apkleaks
 ```
+![Argument_Mode](https://user-images.githubusercontent.com/70637311/229830721-7b76011b-d9bf-43c6-b79b-49623033d28b.png)
 
 ### Main Module
 the main menu of the entire tool has these options and commands:
