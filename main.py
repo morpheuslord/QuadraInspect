@@ -103,7 +103,7 @@ def main():
         case 'argm':
             try:
                 match command:
-                    case 'SET target':
+                    case 'target':
                         fn = Prompt.ask("Name >>")
                     case 'tools_name':
                         table = Table(title="Tools Intigrated")
@@ -130,8 +130,6 @@ def main():
                         hm = Table(title="Main Help Menu")
                         hm.add_column("Command")
                         hm.add_column("Details")
-                        hm.add_row(
-                            "SET target", "SET the name of the targetfile")
                         hm.add_row("install_tools",
                                    "If not installed this will install the tools")
                         hm.add_row("tools_name",
