@@ -59,11 +59,14 @@ There are 2 modes:
 ```
 #### F mode
 The `f` mode is a mode where you get the active interface for using the interactive vaerion of the framework with the prompt, etc.
+
 ![usage](https://user-images.githubusercontent.com/70637311/229340837-aae597f1-e33d-4293-af0a-c8e9914e73e2.png)
+
 F mode is the normal mode and can be used easily
 
 #### A mode
 A mode or argumentative mode takes the input via arguments and runs the commands without any intervention by the user this is limited to the main menu in the future i am planning to extend this feature to even the encorporated codes.
+
 ```bash
 python main.py --target <APK_file> --mode a --command install_tools/tools_name/apkleaks/mobfs/rms/apkleaks
 ```
