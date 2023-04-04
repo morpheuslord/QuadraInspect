@@ -105,7 +105,7 @@ def main():
                 match command:
                     case 'SET target':
                         fn = Prompt.ask("Name >>")
-                    case 'LIST tools_name':
+                    case 'tools_name':
                         table = Table(title="Tools Intigrated")
                         table.add_column("Number")
                         table.add_column("Name")
@@ -114,17 +114,17 @@ def main():
                         table.add_row("3", "andropass")
                         table.add_row("4", "RMS")
                         console.print(table)
-                    case 'START install_tools':
+                    case 'install_tools':
                         installer(rdir)
-                    case 'START apkleaks':
+                    case 'apkleaks':
                         apkleaks(fn, rdir)
-                    case 'START mobfs':
+                    case 'mobfs':
                         mobfs(rdir)
-                    case 'START rms':
+                    case 'rms':
                         rms(rdir)
-                    case 'START andropass':
+                    case 'andropass':
                         androp(fn, rdir)
-                    case 'SHOW banner':
+                    case 'banner':
                         banner()
                     case 'help':
                         hm = Table(title="Main Help Menu")
@@ -132,16 +132,16 @@ def main():
                         hm.add_column("Details")
                         hm.add_row(
                             "SET target", "SET the name of the targetfile")
-                        hm.add_row("START install_tools",
+                        hm.add_row("install_tools",
                                    "If not installed this will install the tools")
-                        hm.add_row("LIST tools_name",
+                        hm.add_row("tools_name",
                                    "List out the Tools Intigrated")
-                        hm.add_row("START apkleaks", "Use APKLeaks tool")
-                        hm.add_row("START andropass",
+                        hm.add_row("apkleaks", "Use APKLeaks tool")
+                        hm.add_row("andropass",
                                    "Use AndroPass APK analizer")
-                        hm.add_row("START mobfs",
+                        hm.add_row("mobfs",
                                    "Use MOBfs for dynamic and static analysis")
-                        hm.add_row("START rms",
+                        hm.add_row("rms",
                                    "Use rms for static analysis")
                         hm.add_row("help", "View this current Help menu")
                         console.print(hm)
