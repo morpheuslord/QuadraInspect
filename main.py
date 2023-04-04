@@ -18,7 +18,7 @@ path = str(os.getcwd())
 fn = ""
 
 parser = argparse.ArgumentParser(
-    description='Python-Nmap and chatGPT intigrated Vulnerability scanner')
+    description='AFrame a APK analysis framework..')
 parser.add_argument('--target', metavar='target', type=str,
                     help='APK FILE NAME', required=False)
 
