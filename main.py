@@ -18,7 +18,7 @@ path = str(os.getcwd())
 fn = ""
 
 parser = argparse.ArgumentParser(
-    description='AFrame a APK analysis framework..')
+    description='QuadraInspect a APK analysis framework..')
 parser.add_argument('--target', metavar='target', type=str,
                     help='APK FILE NAME', required=False)
 
