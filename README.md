@@ -60,7 +60,7 @@ There are 2 modes:
 #### F mode
 The `f` mode is a mode where you get the active interface for using the interactive vaerion of the framework with the prompt, etc.
 
-![usage](https://user-images.githubusercontent.com/70637311/229340837-aae597f1-e33d-4293-af0a-c8e9914e73e2.png)
+![Usage](https://user-images.githubusercontent.com/70637311/230757399-e5a4fea3-8932-4ddb-9dfa-99ee35d7994d.png)
 
 F mode is the normal mode and can be used easily
 
@@ -70,7 +70,7 @@ A mode or argumentative mode takes the input via arguments and runs the commands
 ```bash
 python main.py --target <APK_file> --mode a --command install_tools/tools_name/apkleaks/mobfs/rms/apkleaks
 ```
-![Argument_Mode](https://user-images.githubusercontent.com/70637311/229830721-7b76011b-d9bf-43c6-b79b-49623033d28b.png)
+![Argument_mode](https://user-images.githubusercontent.com/70637311/230757449-a690fe49-ee22-4f78-bc62-0ca33eeec2da.png)
 
 ### Main Module
 the main menu of the entire tool has these options and commands:
