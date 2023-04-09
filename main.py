@@ -36,7 +36,7 @@ mode = args.mode
 
 def banner():
     f = Figlet(font='slant')
-    console.print(f.renderText('AFrame'), style="bold")
+    console.print(f.renderText('QuadraInspect'), style="bold")
     pass
 
 
@@ -48,7 +48,7 @@ def main():
         case 'frame':
             try:
                 while True:
-                    cmd = Prompt.ask("AFrame Main>> ")
+                    cmd = Prompt.ask("QuadraInspect Main>> ")
                     match cmd:
                         case 'SET target':
                             fn = Prompt.ask("Name >>")
