@@ -1,12 +1,12 @@
 # AFrame
 
 ```
-    ___    ______
-   /   |  / ____/________ _____ ___  ___ 
-  / /| | / /_  / ___/ __ `/ __ `__ \/ _ \
- / ___ |/ __/ / /  / /_/ / / / / / /  __/
-/_/  |_/_/   /_/   \__,_/_/ /_/ /_/\___/ 
-
+   ____                  __           ____                           __ 
+  / __ \__  ______ _____/ /________ _/  _/___  _________  ___  _____/ /_
+ / / / / / / / __ `/ __  / ___/ __ `// // __ \/ ___/ __ \/ _ \/ ___/ __/
+/ /_/ / /_/ / /_/ / /_/ / /  / /_/ // // / / (__  ) /_/ /  __/ /__/ /_  
+\___\_\__,_/\__,_/\__,_/_/   \__,_/___/_/ /_/____/ .___/\___/\___/\__/  
+                                                /_/                     
 ```
 The security of mobile devices has become a critical concern due to the increasing amount of sensitive data being stored on them. With the rise of Android OS as the most popular mobile platform, the need for effective tools to assess its security has also increased. In response to this need, a new Android framework has emerged that combines three powerful tools - AndroPass, APKUtil, RMS, and MobFS - to conduct comprehensive vulnerability analysis of Android applications. This framework is known as AFrame.
 
