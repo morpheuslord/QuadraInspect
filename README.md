@@ -1,4 +1,4 @@
-# AFrame
+# QuadraInspect
 
 ```
    ____                  __           ____                           __ 
@@ -8,11 +8,11 @@
 \___\_\__,_/\__,_/\__,_/_/   \__,_/___/_/ /_/____/ .___/\___/\___/\__/  
                                                 /_/                     
 ```
-The security of mobile devices has become a critical concern due to the increasing amount of sensitive data being stored on them. With the rise of Android OS as the most popular mobile platform, the need for effective tools to assess its security has also increased. In response to this need, a new Android framework has emerged that combines three powerful tools - AndroPass, APKUtil, RMS, and MobFS - to conduct comprehensive vulnerability analysis of Android applications. This framework is known as AFrame.
+The security of mobile devices has become a critical concern due to the increasing amount of sensitive data being stored on them. With the rise of Android OS as the most popular mobile platform, the need for effective tools to assess its security has also increased. In response to this need, a new Android framework has emerged that combines three powerful tools - AndroPass, APKUtil, RMS, and MobFS - to conduct comprehensive vulnerability analysis of Android applications. This framework is known as QuadraInspect.
 
-AFrame is an Android framework that integrates AndroPass, APKUtil, RMS and MobFS, providing a powerful tool for analyzing the security of Android applications. AndroPass is a tool that focuses on analyzing the security of Android applications' authentication and authorization mechanisms, while APKUtil is a tool that extracts valuable information from an APK file. Lastly, MobFS and RMS facilitates the analysis of an application's filesystem by mounting its storage in a virtual environment.
+QuadraInspect is an Android framework that integrates AndroPass, APKUtil, RMS and MobFS, providing a powerful tool for analyzing the security of Android applications. AndroPass is a tool that focuses on analyzing the security of Android applications' authentication and authorization mechanisms, while APKUtil is a tool that extracts valuable information from an APK file. Lastly, MobFS and RMS facilitates the analysis of an application's filesystem by mounting its storage in a virtual environment.
 
-By combining these three tools, AFrame provides a comprehensive approach to vulnerability analysis of Android applications. This framework can be used by developers, security researchers, and penetration testers to assess the security of their own or third-party applications. AFrame provides a unified interface for all three tools, making it easier to use and reducing the time required to conduct comprehensive vulnerability analysis. Ultimately, this framework aims to increase the security of Android applications and protect users' sensitive data from potential threats.
+By combining these three tools, QuadraInspect provides a comprehensive approach to vulnerability analysis of Android applications. This framework can be used by developers, security researchers, and penetration testers to assess the security of their own or third-party applications. QuadraInspect provides a unified interface for all three tools, making it easier to use and reducing the time required to conduct comprehensive vulnerability analysis. Ultimately, this framework aims to increase the security of Android applications and protect users' sensitive data from potential threats.
 
 ## Requirements
  - Windows, Linux or Mac
@@ -26,7 +26,7 @@ By combining these three tools, AFrame provides a comprehensive approach to vuln
 To install the tools you need to:
 First : 
 `
-git clone https://github.com/morpheuslord/AFrame
+git clone https://github.com/morpheuslord/QuadraInspect
 `
 
 Second Open a **Administrative** cmd or powershell (for Mobfs setup) and run : 
@@ -34,9 +34,9 @@ Second Open a **Administrative** cmd or powershell (for Mobfs setup) and run :
 pip install -r requirements.txt && python3 main.py
 `
 
-Third : Once AFrame loads run this command
+Third : Once QuadraInspect loads run this command
 `
-AFrame Main>> : START install_tools
+QuadraInspect Main>> : START install_tools
 `
 
 The tools will be downloaded to the `tools` directory and also the setup.py and setup.bat commands will run automatically for the complete installation.
