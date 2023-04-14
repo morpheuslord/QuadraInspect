@@ -15,7 +15,7 @@ fn = ""
 
 class Progress(RemoteProgress):
     def update(self, op_code, cur_count, max_count=None, message=''):
-        pprint('update(%s, %s, %s, %s)' %
+        print('update(%s, %s, %s, %s)' %
               (op_code, cur_count, max_count, message))
 
 
@@ -84,11 +84,20 @@ def installer(rdir):
         Repo.clone_from(rms, '{}/rms'.format(twd), progress=Progress())
     except:
         pass
-    os.chdir('{}/apkleaks'.format(twd))
-    run(command, shell=True)
-    os.chdir('{}/mobfs'.format(twd))
-    run(cmd_mob, shell=True)
-    os.chdir('{}/rms'.format(twd))
-    run(rms_cmd, shell=True)
-    run('npm install express nunjucks')
+    try:
+        os.chdir('{}/apkleaks'.format(twd))
+        run(command, shell=True)
+    except:
+        pass
+    try:
+        os.chdir('{}/mobfs'.format(twd))
+        run(cmd_mob, shell=True)
+    except:
+        pass
+    try:
+        os.chdir('{}/rms'.format(twd))
+        run(rms_cmd, shell=True)
+        run('npm install express nunjucks')
+    except:
+        pass
     pprint('Install Complete')
