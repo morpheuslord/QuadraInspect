@@ -1,5 +1,5 @@
-apkleaks==2.6.1
-apkutil==0.1.7
+apkleaks
+apkutil
 autopep8==2.0.2
 colorama==0.4.6
 defusedxml==0.7.1
