@@ -30,11 +30,11 @@ def installer(rdir):
         case 'Darwin':
             command = "python3 setup.py build && python3 setup.py install"
             cmd_mob = "sudo bash setup.sh"
-            rms_cmd = "npm install -g rms-runtime-mobile-security"
+            rms_cmd = "sudo npm install -g rms-runtime-mobile-security"
         case 'Linux':
             command = "python3 setup.py build && python3 setup.py install"
-            cmd_mob = "sudo bash setup.sh"
-            rms_cmd = "npm install -g rms-runtime-mobile-security"
+            cmd_mob = "sudo python3 setup.py build && sudo python3 setup.py install"
+            rms_cmd = "sudo npm install -g rms-runtime-mobile-security"
         case 'Windows':
             command = "python setup.py build && python setup.py install"
             cmd_mob = ".\setup.bat"
