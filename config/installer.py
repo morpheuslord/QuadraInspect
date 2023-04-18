@@ -26,12 +26,15 @@ def installer(rdir):
     command = ""
     cmd_mob = ""
     rms_cmd = ""
+    optsudo = "" 
     match osp:
         case 'Darwin':
+            optsudo = "sudo"
             command = "python3 setup.py build && python3 setup.py install"
             cmd_mob = "sudo bash setup.sh"
             rms_cmd = "sudo npm install -g rms-runtime-mobile-security"
         case 'Linux':
+            optsudo = "sudo"
             command = "python3 setup.py build && python3 setup.py install"
             cmd_mob = "sudo python3 setup.py build && sudo python3 setup.py install"
             rms_cmd = "sudo npm install -g rms-runtime-mobile-security"
@@ -97,7 +100,7 @@ def installer(rdir):
     try:
         os.chdir('{}/rms'.format(twd))
         run(rms_cmd, shell=True)
-        run('sudo npm install express nunjucks')
+        run('{} npm install express nunjucks'.format(optsudo))
     except:
         pass
     pprint('Install Complete')
