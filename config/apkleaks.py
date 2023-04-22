@@ -48,7 +48,7 @@ def apkleaks(fn, rdir):
                     final_cmd += str(" -a {}".format(argn))
                 case 'attack':
                     run("{a} {b}apkleaks.py {c} -f {d}".format(a=p,
-                        b=tdir, c=final_cmd, d=tfile))
+                        b=tdir, c=final_cmd, d=tfile), shell=True)
                 case 'SHOW OPTIONS':
                     opt = Table(title="Options SET")
                     opt.add_column("OPTION")
