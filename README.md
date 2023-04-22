@@ -46,12 +46,15 @@ git clone https://github.com/morpheuslord/QuadraInspect
 `
 
 Second Open a **Administrative** cmd or powershell (for Mobfs setup) and run : 
-`
+```bash
 pip install -r requirements.txt && python main.py
-` or
-`
+``` 
+
+or
+
+```bash
 sudo pip3.10 install -r requirements.txt && sudo python3.10 main.py
-`
+```
 
 Third : Once QuadraInspect loads run this command
 `
