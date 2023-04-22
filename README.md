@@ -17,7 +17,7 @@ By combining these three tools, QuadraInspect provides a comprehensive approach 
 ## Requirements
  - Windows, Linux or Mac
  - NodeJs installed
- - Python 3.10 installed
+ - Python 3.10 or above installed
  - OpenSSL-3 installed
  - Wkhtmltopdf installed
 
