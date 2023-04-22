@@ -26,7 +26,7 @@ def androp(fn, rdir):
             command = Prompt.ask("ANDROPASS>> ")
             match command:
                 case 'attack':
-                    run("{a} {b}AndRoPass.py -a {c}".format(a=p, b=tdir, c=tfile))
+                    run("{a} {b}AndRoPass.py -a {c}".format(a=p, b=tdir, c=tfile), shell=True)
                 case 'help':
                     pprint("This has no more than 1 option")
                     table = Table(title="Tools Intigrated")
