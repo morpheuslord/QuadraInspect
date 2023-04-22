@@ -100,7 +100,7 @@ def installer(rdir):
     try:
         os.chdir('{}/rms'.format(twd))
         run(rms_cmd, shell=True)
-        run('{} npm install express nunjucks'.format(optsudo))
+        run('{} npm install express nunjucks socket.io frida node-datetime'.format(optsudo), shell=True)
     except:
         pass
     pprint('Install Complete')
