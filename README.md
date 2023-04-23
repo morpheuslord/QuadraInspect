@@ -66,6 +66,10 @@ The tools will be downloaded to the `tools` directory and also the setup.py and 
 ## Usage
 Each module has a help function so that the commands and the discriptions are detailed and can be altered for operation.
 
+### OS and modes
+- In linux and Mac you need to run it as a `sudo` user
+- In Windows only the installation can be done as a `Admin` rest all can be done as a normal user 
+
 These are the key points that must be addressed for smooth working:
 - The APK file or target must be declared before starting any attack 
 - The Attacks are seperate entities combined via this framework doing research on how to use them is recommended.
