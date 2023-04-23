@@ -16,7 +16,8 @@ def mobfs(rdir):
             cmd = "run.bat"
     try:
         tdir = '{}/tools/mobfs/'.format(rdir)
-        run('{a} {b}/{c}'.format(a=pre, b=tdir, c=cmd), shell=True)
+        run('{a} {b} {c}'.format(a=pre, b=tdir, c=cmd), shell=True)
         pass
+
     except KeyboardInterrupt:
         pprint("Ending process ...")
