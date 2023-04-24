@@ -2,7 +2,6 @@ import os
 import platform
 from git import Repo
 from subprocess import run
-from git.remote import RemoteProgress
 from rich.console import Console
 from rich.pretty import pprint
 from rich.progress import track
@@ -11,12 +10,6 @@ console = Console()
 os.chdir(os.getcwd())
 path = str(os.getcwd())
 fn = ""
-
-
-class Progress(RemoteProgress):
-    def update(self, op_code, cur_count, max_count=None, message=''):
-        print('update(%s, %s, %s, %s)' %
-              (op_code, cur_count, max_count, message))
 
 
 def installer(rdir):
