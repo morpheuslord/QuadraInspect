@@ -26,18 +26,15 @@ def installer(rdir):
     command = ""
     cmd_mob = ""
     rms_cmd = ""
-    optsudo = "" 
     match osp:
         case 'Darwin':
-            optsudo = "sudo"
             command = "python3 setup.py build && python3 setup.py install"
             cmd_mob = "sudo bash setup.sh"
-            rms_cmd = "sudo npm install -g rms-runtime-mobile-security"
+            rms_cmd = "npm install -g rms-runtime-mobile-security"
         case 'Linux':
-            optsudo = "sudo"
             command = "python3 setup.py build && python3 setup.py install"
-            cmd_mob = "sudo python3 setup.py build && sudo python3 setup.py install"
-            rms_cmd = "sudo npm install -g rms-runtime-mobile-security"
+            cmd_mob = "sudo bash setup.sh"
+            rms_cmd = "npm install -g rms-runtime-mobile-security"
         case 'Windows':
             command = "python setup.py build && python setup.py install"
             cmd_mob = ".\setup.bat"
@@ -67,24 +64,22 @@ def installer(rdir):
     twd = os.getcwd()
     pprint("Cloning AndroPass")
     try:
-        Repo.clone_from(andropass, '{}/andropass'.format(twd),
-                        progress=Progress())
+        Repo.clone_from(andropass, '{}/andropass'.format(twd))
     except:
         pass
     pprint("Cloning APKLeaks")
     try:
-        Repo.clone_from(apkleaks, '{}/apkleaks'.format(twd),
-                        progress=Progress())
+        Repo.clone_from(apkleaks, '{}/apkleaks'.format(twd))
     except:
         pass
     pprint("Cloning MOBfs")
     try:
-        Repo.clone_from(mobfs, '{}/mobfs'.format(twd), progress=Progress())
+        Repo.clone_from(mobfs, '{}/mobfs'.format(twd))
     except:
         pass
     pprint("Cloning RMS-Mobile-Security")
     try:
-        Repo.clone_from(rms, '{}/rms'.format(twd), progress=Progress())
+        Repo.clone_from(rms, '{}/rms'.format(twd))
     except:
         pass
     try:
@@ -100,7 +95,7 @@ def installer(rdir):
     try:
         os.chdir('{}/rms'.format(twd))
         run(rms_cmd, shell=True)
-        run('{} npm install express nunjucks socket.io frida node-datetime'.format(optsudo), shell=True)
+        run('npm install express nunjucks socket.io frida node-datetime', shell=True)
     except:
         pass
     pprint('Install Complete')
