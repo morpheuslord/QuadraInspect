@@ -23,35 +23,24 @@ def addmenu():
 def addinstall(rdir, opt):
     try:
         os.chdir("{}/tools".format(rdir))
-        cwd = os.getcwd()
+        cwd = ("{}/tools".format(rdir))
         match opt:
-            # SWITCH CASE FOR EACH TOOL
             case '1':
                 try:
                     try:
-                        # CHECK TO ENSURE THE NECESSARY PROGRAMS ARE PRESENT (IF NECESSARY)
                         print(check_output("java -version",
                                            stderr=STDOUT, shell=True).decode('utf-8'))
                     except OSError:
                         print("java not found on path")
                         quit
                     pprint('Installing APKeditor')
-                    # FILE OR REPO LINK
                     link = "https://github.com/REAndroid/APKEditor/releases/download/V1.1.8/APKEditor-1.1.8.jar"
-                    # CONFIG FILE LOCATION
-                    link2 = "https://raw.githubusercontent.com/morpheuslord/QuadraInspect/main/config/apkeditor.py"
-                    # PRE DOWNLOAD PREP
-                    os.mkdir('{}/apkeditor'.format(cwd))
-                    os.chdir('{}/apkeditor'.format(cwd))
-                    # TOOL DOWNLOAD
-                    run('wget {} -O apkeditor.jar'.format(link), shell=True)
-                    # MOVE TO CONFIGS
-                    os.chdir('{}/config'.format(rdir))
-                    # CONFIG DOWNLOAD
                     try:
-                        run('wget {} -O apkeditor.py'.format(link2), shell=True)
+                        os.mkdir('{}/apkeditor'.format(cwd))
                     except:
                         pass
+                    os.chdir('{}/apkeditor'.format(cwd))
+                    run('wget {} -O apkeditor.jar'.format(link), shell=True)
                 except FileNotFoundError:
                     pprint('APKEDITOR file error')
                 except:
@@ -60,7 +49,7 @@ def addinstall(rdir, opt):
     except FileNotFoundError:
         pprint('Not Able to Change DIR')
 
-# USE THIS FUNCTION INCASE ANY REQUIREMENTS ARE NOT MET AND MUST BE DOWNLOADED
+
 def requirements(opt):
     pass
 
