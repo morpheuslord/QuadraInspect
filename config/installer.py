@@ -11,7 +11,6 @@ os.chdir(os.getcwd())
 path = str(os.getcwd())
 fn = ""
 
-
 def installer(rdir):
     pprint("Validating OS:")
     osp = platform.system()
