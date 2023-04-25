@@ -80,7 +80,7 @@ def main():
                             banner()
                         case 'START addins':
                             addins(rdir)
-                        case 'update':
+                        case 'update addins':
                             update_addins(rdir)
                         case 'help':
                             hm = Table(title="Main Help Menu")
@@ -102,6 +102,7 @@ def main():
                             hm.add_row("START apkeditor",
                                        "APK decompilation and analysis tool")
                             hm.add_row("START addins", "Install Extra tools.")
+                            hm.add_row("update addins", "Update addins installer.")
                             hm.add_row("help", "View this current Help menu")
                             hm.add_row("SHOW banner", "Render Banner")
                             hm.add_row("quit", "Quit the Program")
@@ -141,7 +142,7 @@ def main():
                         banner()
                     case 'addins':
                         addins(rdir)
-                    case 'update':
+                    case 'update-addins':
                         update_addins(rdir)
                     case 'help':
                         hm = Table(title="Main Help Menu")
@@ -161,6 +162,7 @@ def main():
                         hm.add_row("rms",
                                    "Use rms for static analysis")
                         hm.add_row("addins", "Add aditional tools")
+                        hm.add_row("update-addins", "updates the aditional tools installer")
                         hm.add_row("help", "View this current Help menu")
                         console.print(hm)
             except KeyboardInterrupt:
