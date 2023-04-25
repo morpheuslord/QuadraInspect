@@ -20,6 +20,7 @@ By combining these three tools, QuadraInspect provides a comprehensive approach 
  - Python 3.10 or above installed
  - OpenSSL-3 installed
  - Wkhtmltopdf installed
+ - Additional things based on the addins
 
 ## Installation
 
