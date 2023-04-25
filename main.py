@@ -11,6 +11,9 @@ from config.androp import androp
 from config.apkleaks import apkleaks
 from config.mobfs import mobfs
 from config.rms import rms
+from config.additional import addins
+from config.apkeditor import apkeditor
+from config.update import update_addins
 
 console = Console()
 os.chdir(os.getcwd())
@@ -71,8 +74,14 @@ def main():
                             rms(rdir)
                         case 'START andropass':
                             androp(fn, rdir)
+                        case 'START apkeditor':
+                            apkeditor(fn, rdir)
                         case 'SHOW banner':
                             banner()
+                        case 'START addins':
+                            addins(rdir)
+                        case 'update':
+                            update_addins(rdir)
                         case 'help':
                             hm = Table(title="Main Help Menu")
                             hm.add_column("Command")
@@ -90,6 +99,9 @@ def main():
                                        "Use MOBfs for dynamic and static analysis")
                             hm.add_row("START rms",
                                        "Use rms for static analysis")
+                            hm.add_row("START apkeditor",
+                                       "APK decompilation and analysis tool")
+                            hm.add_row("START addins", "Install Extra tools.")
                             hm.add_row("help", "View this current Help menu")
                             hm.add_row("SHOW banner", "Render Banner")
                             hm.add_row("quit", "Quit the Program")
@@ -100,11 +112,10 @@ def main():
             except KeyboardInterrupt:
                 pprint("I am Quiting!")
                 quit()
+
         case 'argm':
             try:
                 match command:
-                    case 'target':
-                        fn = Prompt.ask("Name >>")
                     case 'tools_name':
                         table = Table(title="Tools Intigrated")
                         table.add_column("Number")
@@ -124,8 +135,14 @@ def main():
                         rms(rdir)
                     case 'andropass':
                         androp(fn, rdir)
+                    case 'apkeditor':
+                        apkeditor(fn, rdir)
                     case 'banner':
                         banner()
+                    case 'addins':
+                        addins(rdir)
+                    case 'update':
+                        update_addins(rdir)
                     case 'help':
                         hm = Table(title="Main Help Menu")
                         hm.add_column("Command")
@@ -137,10 +154,13 @@ def main():
                         hm.add_row("apkleaks", "Use APKLeaks tool")
                         hm.add_row("andropass",
                                    "Use AndroPass APK analizer")
+                        hm.add_row("apkeditor",
+                                   "Use apkeditor to analize APK")
                         hm.add_row("mobfs",
                                    "Use MOBfs for dynamic and static analysis")
                         hm.add_row("rms",
                                    "Use rms for static analysis")
+                        hm.add_row("addins", "Add aditional tools")
                         hm.add_row("help", "View this current Help menu")
                         console.print(hm)
             except KeyboardInterrupt:
