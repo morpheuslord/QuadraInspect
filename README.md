@@ -63,6 +63,14 @@ QuadraInspect Main>> : START install_tools
 
 The tools will be downloaded to the `tools` directory and also the setup.py and setup.bat commands will run automatically for the complete installation.
 
+## Addins
+
+The addins are for the community to edit. Anyone who is intrested can add new tools by editing the `config/additional.py` file and the tools and all the perticular configurations necessary for the smooth installation of the program.
+
+The addins can be updated using the `update addins` or the `update-addins` commands depending on the mode of usage.
+
+Hope many more tools will be added by you all as a support and building of the tool.
+
 ## Usage
 Each module has a help function so that the commands and the discriptions are detailed and can be altered for operation.
 
