@@ -113,6 +113,7 @@ python main.py --target <APK_file> --mode a --command install_tools/tools_name/a
 ### Main Module
 the main menu of the entire tool has these options and commands:
 
+`Frame mode`:
 |Command|Discription|
 |----|----|
 |`SET target`| SET the name of the targetfile|
@@ -126,6 +127,19 @@ the main menu of the entire tool has these options and commands:
 |`help`| Display help menu|
 |`SHOW banner`| Display banner|
 |`quit`|Quit the program|
+
+`Args mode`:
+|Command|Discription|
+|----|----|
+|`install_tools`|If not installed this will install the tools|
+|`tools_name`| List out the Tools Intigrated |
+|`apkleaks`|  Use APKLeaks tool |
+|`mobfs`| Use MOBfs for dynamic and static analysis |
+|`andropass`| Use AndroPass APK analizer |
+|`addins` | Starts the Extra tools installer |
+|`addins`| Updates the extra tools installer|
+|`help`| Display help menu|
+|`banner`| Display banner|
 
 As mentioned above the target must be set before any tool is used.
 
