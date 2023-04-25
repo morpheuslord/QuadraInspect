@@ -48,7 +48,10 @@ def addinstall(rdir, opt):
                     # MOVE TO CONFIGS
                     os.chdir('{}/config'.format(rdir))
                     # CONFIG DOWNLOAD
-                    run('wget {} -O apkeditor.py'.format(link2), shell=True)
+                    try:
+                        run('wget {} -O apkeditor.py'.format(link2), shell=True)
+                    except:
+                        pass
                 except FileNotFoundError:
                     pprint('APKEDITOR file error')
                 except:
