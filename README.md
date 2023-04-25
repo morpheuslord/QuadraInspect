@@ -120,6 +120,8 @@ the main menu of the entire tool has these options and commands:
 |`START apkleaks`|  Use APKLeaks tool |
 |`START mobfs`| Use MOBfs for dynamic and static analysis |
 |`START andropass`| Use AndroPass APK analizer |
+|`START addins` | Starts the Extra tools installer |
+|`update addins`| Updates the extra tools installer|
 |`help`| Display help menu|
 |`SHOW banner`| Display banner|
 |`quit`|Quit the program|
