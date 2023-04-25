@@ -35,9 +35,12 @@ def addinstall(rdir, opt):
                         quit
                     pprint('Installing APKeditor')
                     link = "https://github.com/REAndroid/APKEditor/releases/download/V1.1.8/APKEditor-1.1.8.jar"
+                    link2 = "https://raw.githubusercontent.com/morpheuslord/QuadraInspect/main/config/apkeditor.py"
                     os.mkdir('{}/apkeditor'.format(cwd))
                     os.chdir('{}/apkeditor'.format(cwd))
                     run('wget {} -O apkeditor.jar'.format(link), shell=True)
+                    os.chdir('{}/config'.format(rdir))
+                    run('wget {} -O apkeditor.py'.format(link2), shell=True)
                 except FileNotFoundError:
                     pprint('APKEDITOR file error')
                 except:
