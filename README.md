@@ -67,9 +67,12 @@ The tools will be downloaded to the `tools` directory and also the setup.py and 
 
 The addins are for the community to edit. Anyone who is intrested can add new tools by editing the `config/additional.py` file and the tools and all the perticular configurations necessary for the smooth installation of the program.
 
-The addins can be updated using the `update addins` or the `update-addins` commands depending on the mode of usage.
-
+- The addins can be updated using the `update addins` or the `update-addins` commands depending on the mode of usage.
+- For each Addin a currsponding config file must be written and placed in the `config` directory.
+- Each of the tools must be updating the `main.py` also.
 Hope many more tools will be added by you all as a support and building of the tool.
+
+As of now there is one additional tool called APKEditor mentioned in the addins. You can install that from the `START addins` command and needs `java RTE` to run
 
 ## Usage
 Each module has a help function so that the commands and the discriptions are detailed and can be altered for operation.
