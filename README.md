@@ -12,7 +12,6 @@
          <img src="https://img.shields.io/badge/Os-Linux-yellow?logo=linux" />
          <img src="https://img.shields.io/badge/Os-windows-yellow?logo=windows" />
          <img src="https://img.shields.io/badge/Os-mac-yellow?logo=macos" />
-         <img alt="GitHub" src="https://img.shields.io/github/license/creator54/morpheuslord"/>
 </p>
 <p align="center">
 The security of mobile devices has become a critical concern due to the increasing amount of sensitive data being stored on them. With the rise of Android OS as the most popular mobile platform, the need for effective tools to assess its security has also increased. In response to this need, a new Android framework has emerged that combines three powerful tools - AndroPass, APKUtil, RMS, and MobFS - to conduct comprehensive vulnerability analysis of Android applications. This framework is known as QuadraInspect.
