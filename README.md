@@ -11,7 +11,7 @@
 <p align="center">
          <img src="https://img.shields.io/badge/Os-Linux-yellow?logo=linux" />
          <img src="https://img.shields.io/badge/Os-windows-yellow?logo=windows" />
-         <img src="https://img.shields.io/badge/Os-macos-yellow?logo=macos" />
+         <img src="https://img.shields.io/badge/Os-mac-yellow?logo=macos" />
          <img alt="GitHub" src="https://img.shields.io/github/license/creator54/morpheuslord"/>
 </p>
 <p align="center">
