@@ -8,6 +8,13 @@
 \___\_\__,_/\__,_/\__,_/_/   \__,_/___/_/ /_/____/ .___/\___/\___/\__/  
                                                 /_/                     
 ```
+<p align="center">
+         <img src="https://img.shields.io/badge/Os-Linux-yellow?logo=linux" />
+         <img src="https://img.shields.io/badge/Os-Linux-yellow?logo=windows" />
+         <img src="https://img.shields.io/badge/Os-Linux-yellow?logo=macos" />
+         <img alt="GitHub" src="https://img.shields.io/github/license/creator54/morpheuslord"/>
+</p>
+<p align="center">
 The security of mobile devices has become a critical concern due to the increasing amount of sensitive data being stored on them. With the rise of Android OS as the most popular mobile platform, the need for effective tools to assess its security has also increased. In response to this need, a new Android framework has emerged that combines three powerful tools - AndroPass, APKUtil, RMS, and MobFS - to conduct comprehensive vulnerability analysis of Android applications. This framework is known as QuadraInspect.
 
 QuadraInspect is an Android framework that integrates AndroPass, APKUtil, RMS and MobFS, providing a powerful tool for analyzing the security of Android applications. AndroPass is a tool that focuses on analyzing the security of Android applications' authentication and authorization mechanisms, while APKUtil is a tool that extracts valuable information from an APK file. Lastly, MobFS and RMS facilitates the analysis of an application's filesystem by mounting its storage in a virtual environment.
