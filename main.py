@@ -14,6 +14,7 @@ from config.rms import rms
 from config.additional import addins
 from config.apkeditor import apkeditor
 from config.update import update_addins
+from config.backdoor import backdoor
 
 console = Console()
 os.chdir(os.getcwd())
@@ -74,6 +75,8 @@ def main():
                             rms(rdir)
                         case 'START andropass':
                             androp(fn, rdir)
+                        case 'START backdoor':
+                            backdoor(fn, rdir)
                         case 'START apkeditor':
                             apkeditor(fn, rdir)
                         case 'SHOW banner':
@@ -95,6 +98,8 @@ def main():
                             hm.add_row("START apkleaks", "Use APKLeaks tool")
                             hm.add_row("START andropass",
                                        "Use AndroPass APK analizer")
+                            hm.add_row(
+                                "START backdoor", "Create an obfescated APK file for payload injection")
                             hm.add_row("START mobfs",
                                        "Use MOBfs for dynamic and static analysis")
                             hm.add_row("START rms",
@@ -102,7 +107,6 @@ def main():
                             hm.add_row("START apkeditor",
                                        "APK decompilation and analysis tool")
                             hm.add_row("START addins", "Install Extra tools.")
-                            hm.add_row("update addins", "Update addins installer.")
                             hm.add_row("help", "View this current Help menu")
                             hm.add_row("SHOW banner", "Render Banner")
                             hm.add_row("quit", "Quit the Program")
@@ -136,10 +140,10 @@ def main():
                         rms(rdir)
                     case 'andropass':
                         androp(fn, rdir)
-                    case 'apkeditor':
-                        apkeditor(fn, rdir)
                     case 'banner':
                         banner()
+                    case 'backdoor':
+                        backdoor(fn, rdir)
                     case 'addins':
                         addins(rdir)
                     case 'update-addins':
@@ -155,14 +159,13 @@ def main():
                         hm.add_row("apkleaks", "Use APKLeaks tool")
                         hm.add_row("andropass",
                                    "Use AndroPass APK analizer")
-                        hm.add_row("apkeditor",
-                                   "Use apkeditor to analize APK")
+                        hm.add_row(
+                            "backdoor", "Create an obfescated APK file for payload injection")
                         hm.add_row("mobfs",
                                    "Use MOBfs for dynamic and static analysis")
                         hm.add_row("rms",
                                    "Use rms for static analysis")
                         hm.add_row("addins", "Add aditional tools")
-                        hm.add_row("update-addins", "updates the aditional tools installer")
                         hm.add_row("help", "View this current Help menu")
                         console.print(hm)
             except KeyboardInterrupt:
