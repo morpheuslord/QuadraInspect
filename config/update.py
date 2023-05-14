@@ -18,9 +18,9 @@ def update_addins(rdir):
             case 'Windows':
                 p = "del"
         pprint = "Deleting old installer"
-        run('{a} {b}'.format(a=p, b=ifile))
+        run('{a} {b}'.format(a=p, b=ifile), shell=True)
         pprint = "Dowloading new installer"
         os.chdir(cdir)
-        run('wget https://raw.githubusercontent.com/morpheuslord/QuadraInspect/main/config/additional.py -O additional.py')
+        run('wget https://raw.githubusercontent.com/morpheuslord/QuadraInspect/main/config/additional.py -O additional.py', shell=True)
     except:
         pprint("Error while deletion or copy")
