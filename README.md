@@ -2,10 +2,10 @@
 
 ```
    ____                  __           ____                           __ 
-  / __ \__  ______ _____/ /________ _/  _/___  _________  ___  _____/ /_
+  / /\ \__  ______ _____/ /________ _/  _/___  _________  ___  _____/ /_
  / / / / / / / __ `/ __  / ___/ __ `// // __ \/ ___/ __ \/ _ \/ ___/ __/
 / /_/ / /_/ / /_/ / /_/ / /  / /_/ // // / / (__  ) /_/ /  __/ /__/ /_  
-\___\_\__,_/\__,_/\__,_/_/   \__,_/___/_/ /_/____/ .___/\___/\___/\__/  
+\___\\_\__,_/\__,_/\__,_/_/   \__,_/___/_/ /_/____/ .___/\___/\___/\__/  
                                                 /_/                     
 ```
 <p align="center">
@@ -71,17 +71,17 @@ The tools will be downloaded to the `tools` directory and also the setup.py and 
 
 ## Addins
 
-The addins are for the community to edit. Anyone who is intrested can add new tools by editing the `config/additional.py` file and the tools and all the perticular configurations necessary for the smooth installation of the program.
+The addins are for the community to edit. Anyone who is interested can add new tools by editing the `config/additional.py` file and the tools and all the particular configurations necessary for the smooth installation of the program.
 
 - The addins can be updated using the `update addins` or the `update-addins` commands depending on the mode of usage.
-- For each Addin a currsponding config file must be written and placed in the `config` directory.
+- For each Addin a corresponding config file must be written and placed in the `config` directory.
 - Each of the tools must be updating the `main.py` also.
 Hope many more tools will be added by you all as a support and building of the tool.
 
 As of now there is one additional tool called APKEditor mentioned in the addins. You can install that from the `START addins` command and needs `java RTE` to run
 
 ## Usage
-Each module has a help function so that the commands and the discriptions are detailed and can be altered for operation.
+Each module has a help function so that the commands and the descriptions are detailed and can be altered for operation.
 
 ### OS and modes
 - In linux and Mac you need to run it as a `sudo` user
@@ -89,8 +89,8 @@ Each module has a help function so that the commands and the discriptions are de
 
 These are the key points that must be addressed for smooth working:
 - The APK file or target must be declared before starting any attack 
-- The Attacks are seperate entities combined via this framework doing research on how to use them is recommended.
-- The APK file can be ether declared ether using `args` or using `SET target` withing the tool.
+- The Attacks are separate entities combined via this framework doing research on how to use them is recommended.
+- The APK file can be either declared either using `args` or using `SET target` withing the tool.
 - The target APK file must be placed in the `target` folder as all the tool searches for the target file with that folder.
 
 ### Modes
@@ -101,14 +101,14 @@ There are 2 modes:
 └─> A mode
 ```
 #### F mode
-The `f` mode is a mode where you get the active interface for using the interactive vaerion of the framework with the prompt, etc.
+The `f` mode is a mode where you get the active interface for using the interactive variation of the framework with the prompt, etc.
 
 ![Usage](https://user-images.githubusercontent.com/70637311/230757399-e5a4fea3-8932-4ddb-9dfa-99ee35d7994d.png)
 
 F mode is the normal mode and can be used easily
 
 #### A mode
-A mode or argumentative mode takes the input via arguments and runs the commands without any intervention by the user this is limited to the main menu in the future i am planning to extend this feature to even the encorporated codes.
+A mode or argumentative mode takes the input via arguments and runs the commands without any intervention by the user this is limited to the main menu in the future i am planning to extend this feature to even the incorporated codes.
 
 ```bash
 python main.py --target <APK_file> --mode a --command install_tools/tools_name/apkleaks/mobfs/rms/apkleaks
@@ -119,11 +119,11 @@ python main.py --target <APK_file> --mode a --command install_tools/tools_name/a
 the main menu of the entire tool has these options and commands:
 
 `Frame mode`:
-|Command|Discription|
+|Command|Description|
 |----|----|
 |`SET target`| SET the name of the targetfile|
 |`START install_tools`|If not installed this will install the tools|
-|`LIST tools_name`| List out the Tools Intigrated |
+|`LIST tools_name`| List out the Tools Integrated |
 |`START apkleaks`|  Use APKLeaks tool |
 |`START mobfs`| Use MOBfs for dynamic and static analysis |
 |`START andropass`| Use AndroPass APK analizer |
@@ -134,10 +134,10 @@ the main menu of the entire tool has these options and commands:
 |`quit`|Quit the program|
 
 `Args mode`:
-|Command|Discription|
+|Command|Description|
 |----|----|
 |`install_tools`|If not installed this will install the tools|
-|`tools_name`| List out the Tools Intigrated |
+|`tools_name`| List out the Tools Integrated |
 |`apkleaks`|  Use APKLeaks tool |
 |`mobfs`| Use MOBfs for dynamic and static analysis |
 |`andropass`| Use AndroPass APK analizer |
@@ -164,7 +164,7 @@ The APKLeaks menu is also really straight forward and only a few things to consi
 |`quit`|Quit the tool|
 
 ### Mobfs
-Mobfs is pritty straight forward only the port number must be taken care of which is by default on port 5000 you just need to start the program and connect to it on `127.0.0.1:5000` over your browser.
+Mobfs is pretty straight forward only the port number must be taken care of which is by default on port 5000 you just need to start the program and connect to it on `127.0.0.1:5000` over your browser.
 
 ### AndroPass
 AndroPass is also really straight forward it just takes the file as input and does its job without any other inputs.
@@ -181,24 +181,24 @@ The APK analysis framework will follow a modular architecture, similar to Metasp
 
 ### Adding more
 
-Currentluy there only 3 but if wanted people can add more tools to this these are the things to be considered:
+Currently there only 3 but if wanted people can add more tools to this these are the things to be considered:
 - Installer function
-- Seperate tool function
+- Separate tool function
 - Main function
 
 #### Installer Function
 
 - Must edit in the `config/installer.py`
 - The things to consider in the installer is the link for the repository.
-- keep the cloner and the directory in a try-except condition to avoide errors.
+- keep the cloner and the directory in a try-except condition to avoid errors.
 - choose an appropriate command for further installation
 
-#### Seperate tool function
+#### Separate tool function
 
 - Must edit in the `config/mobfs.py , config/androp.py, config/apkleaks.py`
 - Write a new function for the specific tool
-- File handeling is up to you I recommend passing the file name as an argument and then using the name to locate the file using the subprocess function
-- the tools must also recommended to be in a try-except condition to avoide unwanted errors.
+- File handling is up to you I recommend passing the file name as an argument and then using the name to locate the file using the subprocess function
+- the tools must also recommended to be in a try-except condition to avoid unwanted errors.
 
 #### Main Function
 - A new case must be added to the switch function to act as a main function holder
