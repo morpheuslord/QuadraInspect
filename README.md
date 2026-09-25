@@ -32,6 +32,22 @@ QuadraInspect is packaged as a standard Python project and is managed with the
 
 ## Installation
 
+### Quick install (everything at once)
+
+The fastest path — installs `uv`, all Python dependencies, **and** every
+integrated tool and add-on in a single command:
+
+```bash
+git clone https://github.com/morpheuslord/QuadraInspect
+cd QuadraInspect
+./install.sh            # Linux / macOS  (use sudo where tools require it)
+```
+
+On Windows, run `install.bat` from the cloned directory. Pass `--deps-only` to
+install just the Python dependencies and skip the tools.
+
+The step-by-step instructions below do the same thing manually.
+
 ### 1. Install uv
 
 ```bash
@@ -79,6 +95,12 @@ Once QuadraInspect loads, run:
 
 ```
 QuadraInspect Main>> START install_tools
+```
+
+To install the integrated tools **and** every optional add-on in one step, use:
+
+```
+QuadraInspect Main>> START full_install
 ```
 
 The tools are downloaded to the `tools` directory and each tool's own setup steps
@@ -139,6 +161,7 @@ the main menu of the entire tool has these options and commands:
 |----|----|
 |`SET target`| SET the name of the targetfile|
 |`START install_tools`|If not installed this will install the tools|
+|`START full_install`| Install all tools and add-ons at once |
 |`LIST tools_name`| List out the Tools Integrated |
 |`START apkleaks`|  Use APKLeaks tool |
 |`START mobfs`| Use MOBfs for dynamic and static analysis |
@@ -153,6 +176,7 @@ the main menu of the entire tool has these options and commands:
 |Command|Description|
 |----|----|
 |`install_tools`|If not installed this will install the tools|
+|`full-install`| Install all tools and add-ons at once |
 |`tools_name`| List out the Tools Integrated |
 |`apkleaks`|  Use APKLeaks tool |
 |`mobfs`| Use MOBfs for dynamic and static analysis |

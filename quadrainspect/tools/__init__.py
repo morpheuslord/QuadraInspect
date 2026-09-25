@@ -12,6 +12,7 @@ from quadrainspect.tools.apkeditor import ApkEditorTool
 from quadrainspect.tools.apkleaks import ApkLeaksTool
 from quadrainspect.tools.backdoor import BackdoorTool
 from quadrainspect.tools.base import InteractiveTool, OneShotTool, Tool, ToolContext
+from quadrainspect.tools.full_installer import FullInstaller
 from quadrainspect.tools.installer import Installer
 from quadrainspect.tools.mobfs import MobFsTool
 from quadrainspect.tools.rms import RmsTool
@@ -24,6 +25,7 @@ __all__ = [
     "ApkEditorTool",
     "ApkLeaksTool",
     "BackdoorTool",
+    "FullInstaller",
     "Installer",
     "InteractiveTool",
     "MobFsTool",

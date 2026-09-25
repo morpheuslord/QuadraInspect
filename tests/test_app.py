@@ -46,6 +46,13 @@ def test_argument_mode_safe_commands_run(tmp_path: Path, command: str) -> None:
     assert app.session.workspace.tools_dir.is_dir()
 
 
+def test_full_install_available_in_both_modes(tmp_path: Path) -> None:
+    app = make_app(tmp_path)
+    entry = next(e for e in app.entries if e.arg_name == "full-install")
+    assert entry.frame_name == "START full_install"
+    assert entry.description
+
+
 def test_argument_help_lists_only_arg_commands(tmp_path: Path) -> None:
     app = make_app(tmp_path)
     table = app.argument_help()

@@ -6,10 +6,11 @@ from pathlib import Path
 
 import pytest
 
+from quadrainspect.exceptions import DependencyError
 from quadrainspect.platform import OperatingSystem, Platform
 from quadrainspect.runner import CommandRunner
 from quadrainspect.session import Session, Workspace
-from quadrainspect.tools import AddinsManager, BackdoorTool
+from quadrainspect.tools import AddinsManager, BackdoorTool, FullInstaller
 from quadrainspect.tools.base import ToolContext
 
 
@@ -47,6 +48,42 @@ def test_backdoor_tool_root_matches_install_layout(tmp_path: Path) -> None:
     tool = BackdoorTool(make_context(tmp_path))
     expected = tmp_path / "tools" / "backdoor-apk-master" / "backdoor-apk"
     assert tool._tool_root == expected
+
+
+def test_install_all_is_best_effort(tmp_path: Path) -> None:
+    # A failing add-on must not stop the others from being attempted.
+    manager = AddinsManager(make_context(tmp_path))
+    attempted: list[str] = []
+
+    def boom() -> None:
+        attempted.append("apkeditor")
+        raise DependencyError("no java")
+
+    def ok() -> None:
+        attempted.append("backdoor")
+
+    manager._addons["1"] = manager._addons["1"].__class__(
+        key="1", name="APKEditor", os_support="all", depends="Java", install=boom,
+    )
+    manager._addons["2"] = manager._addons["2"].__class__(
+        key="2", name="Backdoor-APK", os_support="posix", depends="Java", install=ok,
+    )
+    manager.install_all()  # must not raise
+    assert attempted == ["apkeditor", "backdoor"]
+
+
+def test_full_installer_runs_tools_then_addons(tmp_path: Path, monkeypatch) -> None:
+    order: list[str] = []
+    monkeypatch.setattr(
+        "quadrainspect.tools.full_installer.Installer.execute",
+        lambda self: order.append("tools"),
+    )
+    monkeypatch.setattr(
+        "quadrainspect.tools.full_installer.AddinsManager.install_all",
+        lambda self: order.append("addons"),
+    )
+    FullInstaller(make_context(tmp_path)).execute()
+    assert order == ["tools", "addons"]
 
 
 def test_oneshot_tool_requires_execute() -> None:

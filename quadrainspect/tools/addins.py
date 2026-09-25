@@ -15,7 +15,7 @@ from rich.prompt import Prompt
 from rich.table import Table
 
 from quadrainspect.console import console
-from quadrainspect.exceptions import UnsupportedPlatformError
+from quadrainspect.exceptions import QuadraInspectError, UnsupportedPlatformError
 from quadrainspect.net import download_file
 from quadrainspect.tools.base import InteractiveTool, ToolContext
 
@@ -66,6 +66,27 @@ class AddinsManager(InteractiveTool):
             AddOn("2", "Backdoor-APK", "Linux/macOS (tested on Kali)", "Java", self._install_backdoor),
         )
         self._addons = {addon.key: addon for addon in addons}
+
+    @property
+    def addons(self) -> tuple[AddOn, ...]:
+        """The registered add-ons, in listing order."""
+        return tuple(self._addons.values())
+
+    def install_all(self) -> None:
+        """Install every add-on, best-effort.
+
+        Each add-on is attempted independently: a failure (missing dependency,
+        unsupported platform, network error) is logged and the next one is still
+        attempted, so one broken add-on never aborts a full installation.
+        """
+        for addon in self._addons.values():
+            self.log.info("Installing add-on %s", addon.name)
+            try:
+                addon.install()
+            except QuadraInspectError as exc:
+                self.log.warning("Skipping add-on %s: %s", addon.name, exc)
+            except Exception as exc:  # noqa: BLE001 - keep going through add-ons
+                self.log.warning("Add-on %s failed: %s", addon.name, exc)
 
     # -- menu commands -----------------------------------------------------
     def _list(self) -> None:
