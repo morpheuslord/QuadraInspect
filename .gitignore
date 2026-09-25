@@ -1,0 +1,37 @@
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# uv
+.uv/
+
+# Tooling caches
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+
+# Runtime working directories (created by the installer)
+/tools/
+/results/*
+!/results/.gitkeep
+
+# Downloaded targets
+/target/*
+!/target/.gitkeep
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
