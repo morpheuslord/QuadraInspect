@@ -27,58 +27,96 @@ By combining these three tools, QuadraInspect provides a comprehensive approach 
  - Wkhtmltopdf installed
  - Additional things based on the addins
 
+QuadraInspect is packaged as a standard Python project and is managed with the
+[`uv`](https://docs.astral.sh/uv/) package manager.
+
 ## Installation
 
-### Install python3.10 on ubuntu or other linux
-- Step 0: prerequisite
-```bash
-sudo apt install wget build-essential libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev libffi-dev zlib1g-dev  
-```
-- Step 1: download python
-```bash
-sudo su && wget https://www.python.org/ftp/python/3.10.8/Python-3.10.8.tgz && tar xzf Python-3.10.8.tgz && cd Python-3.10.8 
-```
-- Step 2: install python
-```bash
-./configure --enable-optimizations 
-make altinstall 
-```
-### Install the tool
+### Quick install (everything at once)
 
-To install the tools you need to:
-First : 
-`
+The fastest path — installs `uv`, all Python dependencies, **and** every
+integrated tool and add-on in a single command:
+
+```bash
 git clone https://github.com/morpheuslord/QuadraInspect
-`
-
-Second Open a **Administrative** cmd or powershell (for Mobfs setup) and run : 
-```bash
-pip install -r requirements.txt && python main.py
-``` 
-
-or
-
-```bash
-sudo pip3.10 install -r requirements.txt && sudo python3.10 main.py
+cd QuadraInspect
+./install.sh            # Linux / macOS  (use sudo where tools require it)
 ```
 
-Third : Once QuadraInspect loads run this command
-`
-QuadraInspect Main>> : START install_tools
-`
+On Windows, run `install.bat` from the cloned directory. Pass `--deps-only` to
+install just the Python dependencies and skip the tools.
 
-The tools will be downloaded to the `tools` directory and also the setup.py and setup.bat commands will run automatically for the complete installation.
+The step-by-step instructions below do the same thing manually.
+
+### 1. Install uv
+
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+(See the [uv installation guide](https://docs.astral.sh/uv/getting-started/installation/)
+for Windows and alternative methods.)
+
+### 2. Clone and set up the framework
+
+```bash
+git clone https://github.com/morpheuslord/QuadraInspect
+cd QuadraInspect
+uv sync
+```
+
+`uv sync` creates an isolated virtual environment and installs QuadraInspect from
+the locked dependency set (`uv.lock`). The bundled analysis scripts pull a few
+extra libraries; install them with:
+
+```bash
+uv sync --extra tools
+```
+
+### 3. Run QuadraInspect
+
+```bash
+uv run quadrainspect            # interactive (frame) mode
+```
+
+You can also run it as a module or via the legacy entry point:
+
+```bash
+uv run python -m quadrainspect
+uv run python main.py
+```
+
+> On Linux/macOS some integrated tools require elevated privileges; run the
+> command with `sudo` where needed.
+
+### 4. Install the integrated tools
+
+Once QuadraInspect loads, run:
+
+```
+QuadraInspect Main>> START install_tools
+```
+
+To install the integrated tools **and** every optional add-on in one step, use:
+
+```
+QuadraInspect Main>> START full_install
+```
+
+The tools are downloaded to the `tools` directory and each tool's own setup steps
+run automatically.
 
 ## Addins
 
-The addins are for the community to edit. Anyone who is interested can add new tools by editing the `config/additional.py` file and the tools and all the particular configurations necessary for the smooth installation of the program.
+Add-ins are optional, community-contributed tools. They are declared as `AddOn`
+objects in `quadrainspect/tools/addins.py`, so contributing a new one is a matter
+of adding a single entry with its dependencies and an install callable — no
+`switch`/`match` statement to edit.
 
-- The addins can be updated using the `update addins` or the `update-addins` commands depending on the mode of usage.
-- For each Addin a corresponding config file must be written and placed in the `config` directory.
-- Each of the tools must be updating the `main.py` also.
-Hope many more tools will be added by you all as a support and building of the tool.
-
-As of now there is one additional tool called APKEditor mentioned in the addins. You can install that from the `START addins` command and needs `java RTE` to run
+- The framework (and its add-ins) can be updated using the `update addins` or the
+  `update-addins` commands, which perform a `git pull` on the checkout.
+- As of now the available add-ins are **APKEditor** and **Backdoor-APK**. Install
+  them with the `START addins` command; both require a Java runtime environment.
 
 ## Usage
 Each module has a help function so that the commands and the descriptions are detailed and can be altered for operation.
@@ -111,7 +149,7 @@ F mode is the normal mode and can be used easily
 A mode or argumentative mode takes the input via arguments and runs the commands without any intervention by the user this is limited to the main menu in the future i am planning to extend this feature to even the incorporated codes.
 
 ```bash
-python main.py --target <APK_file> --mode a --command install_tools/tools_name/apkleaks/mobfs/rms/apkleaks
+uv run quadrainspect --target <APK_file> --mode argm --command install_tools/tools_name/apkleaks/mobfs/rms/apkleaks
 ```
 ![Argument_mode](https://user-images.githubusercontent.com/70637311/230757449-a690fe49-ee22-4f78-bc62-0ca33eeec2da.png)
 
@@ -123,6 +161,7 @@ the main menu of the entire tool has these options and commands:
 |----|----|
 |`SET target`| SET the name of the targetfile|
 |`START install_tools`|If not installed this will install the tools|
+|`START full_install`| Install all tools and add-ons at once |
 |`LIST tools_name`| List out the Tools Integrated |
 |`START apkleaks`|  Use APKLeaks tool |
 |`START mobfs`| Use MOBfs for dynamic and static analysis |
@@ -137,6 +176,7 @@ the main menu of the entire tool has these options and commands:
 |Command|Description|
 |----|----|
 |`install_tools`|If not installed this will install the tools|
+|`full-install`| Install all tools and add-ons at once |
 |`tools_name`| List out the Tools Integrated |
 |`apkleaks`|  Use APKLeaks tool |
 |`mobfs`| Use MOBfs for dynamic and static analysis |
@@ -169,42 +209,57 @@ Mobfs is pretty straight forward only the port number must be taken care of whic
 ### AndroPass
 AndroPass is also really straight forward it just takes the file as input and does its job without any other inputs.
 
-## Architecture:
+## Architecture
 
-The APK analysis framework will follow a modular architecture, similar to Metasploit. It will consist of the following modules:
+QuadraInspect follows a modular, object-oriented architecture. The framework core
+lives in the `quadrainspect` package and each integrated tool is a self-contained
+class.
 
-- Core module: The core module will provide the basic functionality of the framework, such as command-line interface, input/output handling, and logging.
-- Static analysis module: The static analysis module will be responsible for analyzing the structure and content of APK files, such as the manifest file, resources, and code.
-- Dynamic analysis module: The dynamic analysis module will be responsible for analyzing the behavior of APK files, such as network traffic, API calls, and file system interactions.
-- Reverse engineering module: The reverse engineering module will be responsible for decompiling and analyzing the source code of APK files.
-- Vulnerability testing module: The vulnerability testing module will be responsible for testing the security of APK files, such as identifying vulnerabilities and exploits.
+```
+quadrainspect/
+├── cli.py          # argument parsing / process entry point
+├── app.py          # orchestrator + shared frame/argument menu spec
+├── shell.py        # interactive REPL base class
+├── registry.py     # command registry (dispatch + auto-generated help)
+├── runner.py       # centralised subprocess execution (no shell injection)
+├── platform.py     # OS abstraction
+├── session.py      # workspace layout + runtime state (target, paths)
+├── console.py      # shared console, logging, banner
+├── net.py          # dependency-free downloads
+├── exceptions.py   # typed error hierarchy
+└── tools/          # one class per integrated tool
+    ├── base.py         # Tool / OneShotTool / InteractiveTool + ToolContext
+    ├── apkleaks.py, apkeditor.py, andropass.py, backdoor.py,
+    ├── mobfs.py, rms.py, installer.py, addins.py, updater.py
+```
 
-### Adding more
+Key design points:
 
-Currently there only 3 but if wanted people can add more tools to this these are the things to be considered:
-- Installer function
-- Separate tool function
-- Main function
+- **Command registry (arbitration):** user input is dispatched through a
+  `CommandRegistry` of first-class `Command` objects instead of large duplicated
+  `match`/`switch` blocks. Help tables are generated from the same registry, so
+  they can never drift out of sync with the commands.
+- **Single menu source of truth:** frame (interactive) and argument modes are both
+  driven by one list of `MenuEntry` objects in `app.py`.
+- **Safe subprocess handling:** every external command runs through
+  `CommandRunner` as an argument list (`shell=False`), so user-supplied values
+  such as target file names can never be interpreted by a shell.
+- **Typed errors:** operational failures raise subclasses of
+  `QuadraInspectError` and are reported cleanly by the REPL instead of crashing it.
 
-#### Installer Function
+### Adding a new tool
 
-- Must edit in the `config/installer.py`
-- The things to consider in the installer is the link for the repository.
-- keep the cloner and the directory in a try-except condition to avoid errors.
-- choose an appropriate command for further installation
+1. Create a class in `quadrainspect/tools/` extending `OneShotTool` (single
+   action) or `InteractiveTool` (its own sub-menu). Use `self.runner`,
+   `self.session` and `self.platform` from the shared `ToolContext`.
+2. Export it from `quadrainspect/tools/__init__.py`.
+3. Add one `MenuEntry` for it in `QuadraInspect._build_menu` (`app.py`). That
+   single entry registers the tool in **both** frame and argument modes and in the
+   help output.
+4. If the tool needs to be downloaded, add its repository to `Installer`.
 
-#### Separate tool function
-
-- Must edit in the `config/mobfs.py , config/androp.py, config/apkleaks.py`
-- Write a new function for the specific tool
-- File handling is up to you I recommend passing the file name as an argument and then using the name to locate the file using the subprocess function
-- the tools must also recommended to be in a try-except condition to avoid unwanted errors.
-
-#### Main Function
-- A new case must be added to the switch function to act as a main function holder
-- the help menu listing and commands are up to your requirements and comfort
-
-If wanted you could do your upgrades and add it to this repository for more people to use kind of growing this tool.
+If wanted you could do your upgrades and add them to this repository for more
+people to use, growing this tool.
 
 ### Docker 
 Still under development

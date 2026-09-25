@@ -1,23 +1,21 @@
-autopep8==2.0.2
-colorama==0.4.6
-defusedxml==0.7.1
-gitdb==4.0.10
-GitPython==3.1.31
-markdown-it-py==2.2.0
-mdurl==0.1.2
-pyaxmlparser==0.3.28
-pycodestyle==2.10.0
-pyfiglet==0.7
-Pygments==2.14.0
-rich==13.3.3
-smmap==5.0.0
-tomli==2.0.1
-Django>=3.1.5
+# QuadraInspect is managed with uv; see pyproject.toml / uv.lock.
+# This file is a pip fallback for users who cannot use uv:
+#     pip install -r requirements.txt
+#
+# It lists the framework's core runtime dependencies plus the extra libraries
+# used by the bundled analysis scripts (the [tools] optional extra).
+
+# Core framework
+rich>=13.3.3
+pyfiglet>=0.7
+GitPython>=3.1.31
+
+# Bundled analysis-script helpers ([tools] extra)
+pyaxmlparser>=0.3.28
+defusedxml>=0.7.1
 lxml>=4.6.2
-rsa>=4.7
-biplist>=1.0.3
 requests>=2.25.1
 bs4>=0.0.1
-colorlog>=4.7.2
+rsa>=4.7
 macholib>=1.14
-whitenoise==5.2.0
+colorlog>=4.7.2
